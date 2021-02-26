@@ -1,0 +1,27 @@
+<%- include('./partials/header.ejs') %>
+
+<div class="container"  style="text-align: center;">
+    <br>
+    <h1>Dashboard</h1>
+    <br>
+    <table class="table">
+        <thead class="thead-dark">
+          <tr>
+            <th scope="col">No.</th>
+            <th scope="col">Name</th>
+            <th scope="col">Email</th>
+            <th scope="col">Class</th>
+          </tr>
+        </thead>
+        <tbody>
+          <% student.forEach((el, i) => { %>
+           <tr>
+               <th><%= i + 1 %> </th>
+               <th><%= el.fullName(el.first_name, el.last_name) %></th>
+               <th><%= el.email %></th>
+               <th><%= el.grade %></th>
+           </tr>
+          <% }) %>
+        </tbody>
+      </table>
+</div>
